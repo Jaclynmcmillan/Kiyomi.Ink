@@ -109,7 +109,7 @@ const Services: React.FC = () => {
           <h2 className="text-4xl md:text-6xl font-serif mb-6 italic">Services</h2>
           <div className="h-0.5 w-16 bg-brand-black mx-auto mb-6"></div>
           <p className="text-gray-700 font-light text-lg">
-            Every face is unique. We offer bespoke permanent makeup and styling services designed to enhance your natural allure.
+            Every face is unique. I offer permanent makeup and styling services designed to enhance your natural allure.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ const Services: React.FC = () => {
             <h3 className="text-2xl md:text-3xl font-serif mb-3 group-hover:text-brand-sage transition-colors">Microblading & Machine Shading</h3>
             <p className="text-gray-600 font-light leading-relaxed mb-4">
               Achieve hyper-realistic, fluffy brows or a soft, powdered makeup look. 
-              We utilize advanced techniques to create shape and density that blends seamlessly with your natural hair.
+              I utilize advanced techniques to create shape and density that blends seamlessly with your natural hair.
             </p>
             <span className="text-xs uppercase tracking-widest border-b border-black pb-1">Starting at $450</span>
           </div>
