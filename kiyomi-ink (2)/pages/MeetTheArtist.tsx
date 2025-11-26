@@ -20,11 +20,6 @@ const MeetTheArtist: React.FC = () => {
     <div className="bg-brand-black min-h-screen pt-24 pb-24">
       <div className="container mx-auto px-4 md:px-0 max-w-4xl">
         
-        {/* Header - Minimalist */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-serif text-brand-cream italic mb-4">Danielle</h1>
-          <p className="text-brand-blush uppercase tracking-widest text-sm">Artist & Founder</p>
-        </div>
 
         {/* Collage Stack Container */}
         <div className="flex flex-col space-y-16 md:space-y-32">
