@@ -1,18 +1,105 @@
-import React from "react";
-import { Sparkles } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
-// Local image imports
-import brow1 from "../assets/brow-1.jpg";
-import brow2 from "../assets/brow-2.jpg";
-import brow3 from "../assets/brow-3.jpg";
+// -----------------------------------------
+// Reusable Gallery Component
+// -----------------------------------------
+const ServiceGallery: React.FC<{ images: string[]; alt: string }> = ({
+  images,
+  alt,
+}) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-import toothgem1 from "../assets/toothgem-1.jpg";
-import toothgem2 from "../assets/toothgem-2.jpg";
-import toothgem3 from "../assets/toothgem-3.jpg";
+  // Auto-advance every 5s
+  useEffect(() => {
+    const timer = setInterval(
+      () => setCurrentIndex((prev) => (prev + 1) % images.length),
+      5000
+    );
+    return () => clearInterval(timer);
+  }, [images.length]);
 
+  const next = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="relative overflow-hidden mb-8 aspect-[4/5] md:aspect-[3/4] group/gallery bg-brand-blush/10">
+      {images.map((src, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+          }`}
+        >
+          <img
+            src={src}
+            alt={`${alt} ${index + 1}`}
+            className="w-full h-full object-cover transition-all duration-700 filter grayscale group-hover:grayscale-0"
+          />
+        </div>
+      ))}
+
+      {/* Arrows */}
+      <div className="absolute inset-0 z-20 flex justify-between items-center opacity-0 group-hover/gallery:opacity-100 transition-opacity duration-300 pointer-events-none">
+        <button
+          onClick={prev}
+          className="ml-2 p-2 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/40 transition-colors pointer-events-auto"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button
+          onClick={next}
+          className="mr-2 p-2 rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/40 transition-colors pointer-events-auto"
+        >
+          <ChevronRight size={24} />
+        </button>
+      </div>
+
+      {/* Indicator dots */}
+      <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center space-x-2 pointer-events-none">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrentIndex(idx);
+            }}
+            className={`w-2 h-2 rounded-full transition-all duration-300 pointer-events-auto shadow-sm ${
+              idx === currentIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/80"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Frame */}
+      <div className="absolute inset-0 border border-brand-black/10 m-4 pointer-events-none z-30" />
+    </div>
+  );
+};
+
+// -----------------------------------------
+// Main Services Section
+// -----------------------------------------
 const Services: React.FC = () => {
-  const browImages = [brow1, brow2, brow3];
-  const gemImages = [toothgem1, toothgem2, toothgem3];
+  // 👉 Use direct URLs to /assets
+  const browImages = [
+    "/assets/brow-1.jpg",
+    "/assets/brow-2.jpg",
+    "/assets/brow-3.jpg",
+  ];
+
+  const gemImages = [
+    "/assets/toothgem-1.jpg",
+    "/assets/toothgem-2.jpg",
+    "/assets/toothgem-3.jpg",
+  ];
 
   return (
     <section
@@ -38,23 +125,13 @@ const Services: React.FC = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
           {/* Brows */}
-          <div>
-            <div className="grid grid-cols-3 gap-2 mb-6">
-              {browImages.map((src, i) => (
-                <div
-                  key={i}
-                  className="overflow-hidden rounded-lg border border-black/5"
-                >
-                  <img
-                    src={src}
-                    alt={`Brow service ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="group cursor-pointer">
+            <ServiceGallery
+              images={browImages}
+              alt="Microblading and Machine Shading"
+            />
 
-            <h3 className="text-2xl md:text-3xl font-serif mb-3">
+            <h3 className="text-2xl md:text-3xl font-serif mb-3 group-hover:text-brand-sage transition-colors">
               Microblading &amp; Machine Shading
             </h3>
             <p className="text-gray-600 font-light leading-relaxed mb-4">
@@ -67,32 +144,19 @@ const Services: React.FC = () => {
           </div>
 
           {/* Tooth Gems */}
-          <div className="md:mt-10">
-            <div className="grid grid-cols-3 gap-2 mb-6">
-              {gemImages.map((src, i) => (
-                <div
-                  key={i}
-                  className="overflow-hidden rounded-lg border border-black/5"
-                >
-                  <img
-                    src={src}
-                    alt={`Tooth gem ${i + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="group cursor-pointer md:mt-16">
+            <ServiceGallery images={gemImages} alt="Tooth Gems application" />
 
             <div className="flex items-center gap-2 mb-3">
               <Sparkles size={20} className="text-brand-gold" />
-              <h3 className="text-2xl md:text-3xl font-serif">
+              <h3 className="text-2xl md:text-3xl font-serif group-hover:text-brand-sage transition-colors">
                 Tooth Gems
               </h3>
             </div>
 
             <p className="text-gray-600 font-light leading-relaxed mb-4">
               Add sparkle with high-quality lead-free crystals + gold charms,
-              applied safely with dental-grade adhesive. Zero damage to enamel.
+              applied safely with dental-grade adhesive. Zero damage.
             </p>
             <span className="text-xs uppercase tracking-widest border-b border-black pb-1">
               Starting at $60
@@ -118,6 +182,7 @@ const Services: React.FC = () => {
 };
 
 export default Services;
+
 
 
 
