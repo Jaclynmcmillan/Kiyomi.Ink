@@ -17,8 +17,8 @@ const Hero: React.FC = () => {
             and placed it in the 'public/images/' folder of your project.
         */}
        <img
-  src={hero}
-  alt="Kiyomi Ink — Hero"
+  src={heroImg}
+  alt="Kiyomi Ink Hero Image"
   className="w-full h-full object-cover"
 />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-black/30 via-transparent to-brand-black"></div>
