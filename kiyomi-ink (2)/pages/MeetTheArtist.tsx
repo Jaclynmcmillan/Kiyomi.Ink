@@ -1,4 +1,5 @@
 import meetTheArtist from "../assets/meet-the-artist.jpg";
+import theVibes from "../assets/thevibes.jpg";
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -99,22 +100,11 @@ const MeetTheArtist: React.FC = () => {
           </div>
 
 
-          {/* Collage 3: VIBES (Cranes, Tiger, Interiors) */}
-          <div className="w-full flex flex-col items-center animate-fade-in-up delay-300">
-             <div className="relative w-full aspect-[3/4] md:aspect-[4/3] bg-brand-cream/5 p-2 md:p-4 border-t border-b border-brand-sage/30">
-               {/* 
-                  CLIENT INSTRUCTION: Replace this src with the 'Vibes' collage image.
-               */}
-              <img 
-                src="https://picsum.photos/1600/1200?random=12" 
-                alt="Vibes Collage - Cranes, tigers, and inspiration" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p className="text-gray-500 italic font-serif mt-4 text-sm">The Vibe</p>
-          </div>
-
-        </div>
+         <img 
+  src={theVibes}
+  alt="Kiyomi Ink vibes collage"
+  className="w-full h-full object-cover"
+/>
 
         {/* Artist Statement Text Block */}
         <div className="mt-24 text-center max-w-2xl mx-auto text-gray-300 font-light leading-relaxed px-6">
