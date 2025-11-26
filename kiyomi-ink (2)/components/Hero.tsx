@@ -39,8 +39,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-            Experience customized artistry in Maui. 
-            Specializing in hyper-realistic brows and expressive tooth gems tailored to your unique features.
+            Experience customized hyper-realistic brows and expressive tooth gems tailored to your unique features.
           </p>
 
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center animate-fade-in-up delay-300">
