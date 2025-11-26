@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// 👉 Import your local service photos
-import brow1 from "../assets/brows-1.jpg";
-import brow2 from "../assets/brows-2.jpg";
-import brow3 from "../assets/brows-3.jpg";
+// 👉 Import your local service photos (singular: brow-*.jpg, toothgem-*.jpg)
+import brow1 from "../assets/brow-1.jpg";
+import brow2 from "../assets/brow-2.jpg";
+import brow3 from "../assets/brow-3.jpg";
 
 import toothgem1 from "../assets/toothgem-1.jpg";
 import toothgem2 from "../assets/toothgem-2.jpg";
@@ -89,18 +89,15 @@ const ServiceGallery: React.FC<{ images: string[], alt: string }> = ({ images, a
 };
 
 const Services: React.FC = () => {
-  
   // 👉 Use your local service images
   const browImages = [brow1, brow2, brow3];
   const gemImages = [toothgem1, toothgem2, toothgem3];
 
   return (
     <section id="services" className="py-24 bg-brand-cream text-brand-black relative overflow-hidden">
-
       <div className="absolute top-0 right-0 w-64 h-64 bg-brand-blush/20 rounded-full blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-
         <div className="text-center mb-20 max-w-2xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-serif mb-6 italic">Services</h2>
           <div className="h-0.5 w-16 bg-brand-black mx-auto mb-6"></div>
@@ -116,7 +113,7 @@ const Services: React.FC = () => {
             <ServiceGallery images={browImages} alt="Microblading and Machine Shading" />
             
             <h3 className="text-2xl md:text-3xl font-serif mb-3 group-hover:text-brand-sage transition-colors">
-              Microblading & Machine Shading
+              Microblading &amp; Machine Shading
             </h3>
             <p className="text-gray-600 font-light leading-relaxed mb-4">
               Achieve hyper-realistic, fluffy brows or a soft, powdered makeup look. 
@@ -150,15 +147,17 @@ const Services: React.FC = () => {
         </div>
 
         <div className="mt-24 text-center border-t border-brand-black/10 pt-16">
-          <p className="text-sm tracking-[0.2em] uppercase text-gray-500 mb-2">Expanding My Craft</p>
+          <p className="text-sm tracking-[0.2em] uppercase text-gray-500 mb-2">
+            Expanding My Craft
+          </p>
           <h4 className="text-2xl md:text-3xl font-serif text-brand-black">
             Coming Soon: <span className="italic text-brand-sage">Nano Brows + Fine Line Tattoos</span>
           </h4>
         </div>
-
       </div>
     </section>
   );
 };
 
 export default Services;
+
