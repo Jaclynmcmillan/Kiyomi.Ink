@@ -1,4 +1,4 @@
-import heroMain from "../assets/hero-main.jpg";
+import hero from "../assets/hero.jpg";
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 
@@ -16,10 +16,10 @@ const Hero: React.FC = () => {
             NOTE: Please ensure you have renamed the photo you want to use to 'hero-bg.png' 
             and placed it in the 'public/images/' folder of your project.
         */}
-        <img
-  src="https://picsum.photos/1200/800"
-  className="w-full object-cover ..."
-  alt="Hero"
+       <img
+  src={hero}
+  alt="Kiyomi Ink — Hero"
+  className="w-full h-full object-cover"
 />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-black/30 via-transparent to-brand-black"></div>
       </div>
