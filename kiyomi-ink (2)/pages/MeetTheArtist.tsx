@@ -36,7 +36,7 @@ const MeetTheArtist: React.FC = () => {
                   Recommended size: 1200x1500px (Portrait) or 1500x1500px (Square).
                */}
               <img 
-                src="https://picsum.photos/1200/1500?random=10" 
+                src="IMG_0733 2.jpg" 
                 alt="Meet Your Artist Collage - Danielle with orchids and disco ball" 
                 className="w-full h-full object-cover"
               />
