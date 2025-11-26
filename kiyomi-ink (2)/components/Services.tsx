@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
-
-// 👉 Import your local service photos (CORRECT PATHS, NO SPACES)
 import brow1 from "../assets/brow-1.jpg";
 import brow2 from "../assets/brow-2.jpg";
 import brow3 from "../assets/brow-3.jpg";
