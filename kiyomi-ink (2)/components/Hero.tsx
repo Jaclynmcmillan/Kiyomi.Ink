@@ -1,4 +1,4 @@
-import hero from "../assets/hero.jpg";
+import heroImg from "../../assets/hero.jpg";
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 
