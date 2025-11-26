@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-gray-300 text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-200">
-            Experience elevated, customized artistry in Maui. 
+            Experience customized artistry in Maui. 
             Specializing in hyper-realistic brows and expressive tooth gems tailored to your unique features.
           </p>
 
@@ -49,13 +49,6 @@ const Hero: React.FC = () => {
               className="bg-brand-cream text-brand-black px-10 py-4 uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300 w-full md:w-auto"
             >
               Book Appointment
-            </button>
-
-            <button 
-              onClick={() => scrollTo('services')}
-              className="border border-brand-cream text-brand-cream px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-cream/10 transition-colors duration-300 w-full md:w-auto"
-            >
-              View Services
             </button>
           </div>
         </div>
