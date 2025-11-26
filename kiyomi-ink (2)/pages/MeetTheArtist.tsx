@@ -20,38 +20,35 @@ const MeetTheArtist: React.FC = () => {
   return (
     <div className="bg-brand-black min-h-screen pt-24 pb-24">
       <div className="container mx-auto px-4 md:px-0 max-w-4xl">
-        
 
         {/* Collage Stack Container */}
         <div className="flex flex-col space-y-16 md:space-y-32">
-          
-          {/* Collage 1: Meet Your Artist (Orchids + Disco Ball vibe) */}
+
+          {/* COLLAGE 1 — Meet Your Artist */}
           <div className="w-full flex flex-col items-center animate-fade-in-up delay-100">
             <div className="relative w-full aspect-[4/5] md:aspect-square bg-brand-cream/5 p-2 md:p-4 border border-white/10">
-               {/* 
-                  CLIENT INSTRUCTION: Replace this src with the 'Meet Your Artist' collage image.
-                  Recommended size: 1200x1500px (Portrait) or 1500x1500px (Square).
-               */}
-         <img
-  src={meetTheArtist}
-  alt="Meet Your Artist Collage – Danielle with orchids and disco ball"
-  className="w-full h-full object-cover"
-/>
-
+              <img
+                src={meetTheArtist}
+                alt="Meet Your Artist Collage – Danielle with orchids and disco ball"
+                className="w-full h-full object-cover"
+              />
             </div>
             <p className="text-gray-500 italic font-serif mt-4 text-sm">The Vision</p>
           </div>
 
-          {/* SECTION: Training & Craftsmanship (Merged from Training.tsx) */}
-          <div id="training" className="scroll-mt-32 w-full bg-brand-black text-brand-cream border-t border-b border-white/10 py-16 md:py-24">
+          {/* SECTION — Training & Craftsmanship */}
+          <div
+            id="training"
+            className="scroll-mt-32 w-full bg-brand-black text-brand-cream border-t border-b border-white/10 py-16 md:py-24"
+          >
             <div className="flex flex-col md:flex-row gap-12 items-center">
-              
-              {/* Left: Text Content */}
+
+              {/* LEFT — Text */}
               <div className="md:w-1/2 order-2 md:order-1 text-left">
                 <h2 className="text-4xl md:text-5xl font-serif mb-8">
                   Training & <span className="italic text-brand-blush">Craftsmanship</span>
                 </h2>
-                
+
                 <div className="space-y-8 font-light text-gray-300">
                   <div className="border-l-2 border-brand-blush pl-6">
                     <p className="text-xl text-white mb-2 font-serif">Established 2021</p>
@@ -76,37 +73,45 @@ const MeetTheArtist: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right: Images (Similar to previous Training collage) */}
+              {/* RIGHT — Photos */}
               <div className="md:w-1/2 order-1 md:order-2 relative h-[500px] w-full">
-                {/* Image 1: Working on client */}
                 <div className="absolute top-0 right-0 w-3/4 h-3/4 z-10 transform rotate-2 transition-transform hover:rotate-0 duration-500">
-                  <img 
-                    src="https://picsum.photos/600/800?random=3" 
-                    alt="Danielle working on client" 
+                  <img
+                    src="https://picsum.photos/600/800?random=3"
+                    alt="Danielle working on client"
                     className="w-full h-full object-cover rounded-lg shadow-2xl border-4 border-brand-black"
                   />
                 </div>
-                {/* Image 2: Tools/Studio - Behind */}
+
                 <div className="absolute bottom-0 left-0 w-2/3 h-2/3 z-0 transform -rotate-3 transition-transform hover:-rotate-1 duration-500">
-                  <img 
-                    src="https://picsum.photos/600/800?random=4" 
-                    alt="Studio tools and pigments" 
+                  <img
+                    src="https://picsum.photos/600/800?random=4"
+                    alt="Studio tools and pigments"
                     className="w-full h-full object-cover rounded-lg shadow-2xl opacity-60 hover:opacity-100 transition-opacity duration-500"
                   />
                 </div>
               </div>
+
             </div>
+
             <p className="text-gray-500 italic font-serif mt-12 text-center text-sm">The Craft</p>
           </div>
 
+          {/* COLLAGE 3 — THE VIBES */}
+          <div className="w-full flex flex-col items-center animate-fade-in-up delay-300">
+            <div className="relative w-full aspect-[3/4] md:aspect-[4/3] bg-brand-cream/5 p-2 md:p-4 border-t border-b border-brand-sage/30">
+              <img
+                src={theVibes}
+                alt="Kiyomi Ink vibes collage"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-gray-500 italic font-serif mt-4 text-sm">The Vibe</p>
+          </div>
 
-         <img 
-  src={theVibes}
-  alt="Kiyomi Ink vibes collage"
-  className="w-full h-full object-cover"
-/>
+        </div>
 
-        {/* Artist Statement Text Block */}
+        {/* ARTIST STATEMENT */}
         <div className="mt-24 text-center max-w-2xl mx-auto text-gray-300 font-light leading-relaxed px-6">
           <p>
             "I believe permanent makeup should be undetectable. It is about enhancing the features you already have, adding symmetry, and simplifying your daily ritual. My studio is a space of calm, creativity, and precision."
@@ -120,3 +125,4 @@ const MeetTheArtist: React.FC = () => {
 };
 
 export default MeetTheArtist;
+
