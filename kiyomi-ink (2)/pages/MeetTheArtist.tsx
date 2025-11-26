@@ -35,11 +35,11 @@ const MeetTheArtist: React.FC = () => {
                   CLIENT INSTRUCTION: Replace this src with the 'Meet Your Artist' collage image.
                   Recommended size: 1200x1500px (Portrait) or 1500x1500px (Square).
                */}
-              <img 
-                src="public/images/meet-the-artist.jpg"
-                alt="Meet Your Artist Collage - Danielle with orchids and disco ball" 
-                className="w-full h-full object-cover"
-              />
+              <img
+  src="/images/meet-the-artist.jpg"
+  alt="Meet Your Artist Collage – Danielle with orchids and disco ball"
+  className="w-full h-full object-cover"
+/>
             </div>
             <p className="text-gray-500 italic font-serif mt-4 text-sm">The Vision</p>
           </div>
