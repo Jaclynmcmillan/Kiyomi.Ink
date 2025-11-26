@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
             NOTE: Please ensure you have renamed the photo you want to use to 'hero-bg.png' 
             and placed it in the 'public/images/' folder of your project.
         */}
-       <img
+    <img
   src={heroImg}
   alt="Kiyomi Ink Hero Image"
   className="w-full h-full object-cover"
