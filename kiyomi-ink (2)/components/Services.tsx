@@ -146,7 +146,7 @@ const Services: React.FC = () => {
 
         {/* Coming Soon */}
         <div className="mt-24 text-center border-t border-brand-black/10 pt-16">
-          <p className="text-sm tracking-[0.2em] uppercase text-gray-500 mb-2">Expanding Our Craft</p>
+          <p className="text-sm tracking-[0.2em] uppercase text-gray-500 mb-2">Expanding My Craft</p>
           <h4 className="text-2xl md:text-3xl font-serif text-brand-black">
             Coming Soon: <span className="italic text-brand-sage">Nano Brows + Fine Line Tattoos</span>
           </h4>
