@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
-// ✅ Import local images from src/assets
 import brow1 from "../assets/brow-1.jpg";
 import brow2 from "../assets/brow-2.jpg";
 import brow3 from "../assets/brow-3.jpg";
@@ -21,19 +20,18 @@ const ServiceGallery: React.FC<{ images: string[]; alt: string }> = ({
 
   // Auto-advance every 5s
   useEffect(() => {
-    const timer = setInterval(
-      () => setCurrentIndex((prev) => (prev + 1) % images.length),
-      5000
-    );
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
     return () => clearInterval(timer);
   }, [images.length]);
 
-  const next = (e: React.MouseEvent) => {
+  const next = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setCurrentIndex((prev) => (prev + 1) % images.length);
   };
 
-  const prev = (e: React.MouseEvent) => {
+  const prev = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
   };
@@ -81,9 +79,7 @@ const ServiceGallery: React.FC<{ images: string[]; alt: string }> = ({
               setCurrentIndex(idx);
             }}
             className={`w-2 h-2 rounded-full transition-all duration-300 pointer-events-auto shadow-sm ${
-              idx === currentIndex
-                ? "bg-white scale-125"
-                : "bg-white/50 hover:bg-white/80"
+              idx === currentIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/80"
             }`}
           />
         ))}
@@ -99,7 +95,6 @@ const ServiceGallery: React.FC<{ images: string[]; alt: string }> = ({
 // Main Services Section
 // -----------------------------------------
 const Services: React.FC = () => {
-  // ✅ Use the imported images
   const browImages = [brow1, brow2, brow3];
   const gemImages = [toothgem1, toothgem2, toothgem3];
 
@@ -182,6 +177,9 @@ const Services: React.FC = () => {
     </section>
   );
 };
+
+export default Services;
+
 
 export default Services;
 
