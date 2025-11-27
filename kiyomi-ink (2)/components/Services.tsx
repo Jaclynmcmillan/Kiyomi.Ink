@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
+// ✅ Import local images from src/assets
+import brow1 from "../assets/brow-1.jpg";
+import brow2 from "../assets/brow-2.jpg";
+import brow3 from "../assets/brow-3.jpg";
+
+import toothgem1 from "../assets/toothgem-1.jpg";
+import toothgem2 from "../assets/toothgem-2.jpg";
+import toothgem3 from "../assets/toothgem-3.jpg";
+
 // -----------------------------------------
 // Reusable Gallery Component
 // -----------------------------------------
@@ -72,7 +81,9 @@ const ServiceGallery: React.FC<{ images: string[]; alt: string }> = ({
               setCurrentIndex(idx);
             }}
             className={`w-2 h-2 rounded-full transition-all duration-300 pointer-events-auto shadow-sm ${
-              idx === currentIndex ? "bg-white scale-125" : "bg-white/50 hover:bg-white/80"
+              idx === currentIndex
+                ? "bg-white scale-125"
+                : "bg-white/50 hover:bg-white/80"
             }`}
           />
         ))}
@@ -88,18 +99,9 @@ const ServiceGallery: React.FC<{ images: string[]; alt: string }> = ({
 // Main Services Section
 // -----------------------------------------
 const Services: React.FC = () => {
-  // 👉 Use direct URLs to /assets
-  const browImages = [
-    "/assets/brow-1.jpg",
-    "/assets/brow-2.jpg",
-    "/assets/brow-3.jpg",
-  ];
-
-  const gemImages = [
-    "/assets/toothgem-1.jpg",
-    "/assets/toothgem-2.jpg",
-    "/assets/toothgem-3.jpg",
-  ];
+  // ✅ Use the imported images
+  const browImages = [brow1, brow2, brow3];
+  const gemImages = [toothgem1, toothgem2, toothgem3];
 
   return (
     <section
@@ -182,6 +184,8 @@ const Services: React.FC = () => {
 };
 
 export default Services;
+
+
 
 
 
