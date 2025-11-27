@@ -36,7 +36,8 @@ const Services: React.FC = () => {
               <img
                 src={brow1}
                 alt="Microblading and Machine Shading"
-                className="w-full h-full object-cover transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                // Removed filter grayscale and hover classes here
+                className="w-full h-full object-cover"
               />
               {/* Frame Border */}
               <div className="absolute inset-0 border border-brand-black/10 m-4 pointer-events-none z-30" />
@@ -61,7 +62,8 @@ const Services: React.FC = () => {
               <img
                 src={toothgem1}
                 alt="Tooth Gems application"
-                className="w-full h-full object-cover transition-all duration-700 filter grayscale group-hover:grayscale-0"
+                // Removed filter grayscale and hover classes here
+                className="w-full h-full object-cover"
               />
               {/* Frame Border */}
               <div className="absolute inset-0 border border-brand-black/10 m-4 pointer-events-none z-30" />
